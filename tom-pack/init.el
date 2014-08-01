@@ -53,3 +53,15 @@
 ;; (i'd like to be able to expand with C-TAB, but can't figure it out.)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 (define-key yas-minor-mode-map [(tab)] nil)
+
+;; I like smaller tabs
+(setq-default tab-width 2)
+
+;; Treat LESS like CSS
+;; (add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
+
+;; smaller font
+(set-face-attribute 'default nil :height 102)
+
+;; hopefully this speeds everything up?
+;;(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
