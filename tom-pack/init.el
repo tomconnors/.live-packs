@@ -65,3 +65,27 @@
 
 ;; hopefully this speeds everything up?
 ;;(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
+
+;; this makes the right command key on a mac function as a control key
+(setq ns-right-command-modifier 'control)
+
+;; lock files ruin everyting
+(setq create-lockfiles nil)
+
+(live-load-config-file "coffee-conf.el")
+(live-load-config-file "less-conf.el")
+
+
+;; fn for killing all dired mode buffers
+(defun kill-dired-buffers ()
+	 (interactive)
+	 (mapc (lambda (buffer)
+           (when (eq 'dired-mode (buffer-local-value 'major-mode buffer))
+             (kill-buffer buffer)))
+         (buffer-list)))
+
+;; removes emac live's cute scratch buffer nonsense
+(setq initial-scratch-message "")
+
+;; 2 space indents for js
+(setq js-indent-level 2)
