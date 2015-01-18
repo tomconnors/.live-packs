@@ -178,3 +178,6 @@
     (progn
       (setq interprogram-cut-function nil)
       (setq interprogram-paste-function nil)))
+
+;; TODO: make this work anywhere
+(load (expand-file-name "~/.live-packs/tom-pack/lib/ini-mode/ini-mode.el"))
